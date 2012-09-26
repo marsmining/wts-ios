@@ -10,6 +10,20 @@
 
 @implementation Image (CD)
 
++ (NSURL *) getLocalUrlFromPathThumb:(NSString *) path {
+    NSString *cacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    return [NSURL fileURLWithPathComponents:@[cacheDir, [Image prefix:path]]];
+}
+
++ (NSURL *) getRemoteUrlFromPathThumb:(NSString *) path {
+    return [NSURL URLWithString:[[BASE_IMAGE_URL stringByAppendingString:@"/"]
+                                 stringByAppendingString:[Image prefix:path]]];
+}
+
++ (NSString *) prefix:(NSString *) path {
+    return [THUMB_PREFIX stringByAppendingString:path];
+}
+
 //
 // create new image entity
 //

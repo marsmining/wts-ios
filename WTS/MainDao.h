@@ -17,4 +17,6 @@
 
 - (NSArray *) findAll;
 
+- (NSArray *) findAllWithImages;
+
 @end

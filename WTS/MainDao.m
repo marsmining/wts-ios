@@ -7,6 +7,8 @@
 //
 
 #import "MainDao.h"
+#import "Image+CD.h"
+#import "District+CD.h"
 
 @implementation MainDao
 
@@ -19,9 +21,10 @@
 - (NSArray *) findAll {
     dlog();
     
-    // fetch events
+    // fetch request
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"District" inManagedObjectContext:self.context];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:ENTITY_DISTRICT
+                                              inManagedObjectContext:self.context];
     [request setEntity:entity];
     
     // sorted by
@@ -37,6 +40,17 @@
     }
     
     return fetchResults;
+}
+
+- (NSArray *) findAllWithImages {
+    
+    NSMutableArray *filtered = [NSMutableArray array];
+    
+    for (District *dist in [self findAll]) {
+        if (dist.images.count > 0) [filtered addObject:dist];
+    }
+    
+    return filtered;
 }
 
 @end

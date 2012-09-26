@@ -8,7 +8,8 @@
 
 #import "DistrictTVC.h"
 #import "ImageVC.h"
-#import "District.h"
+#import "District+CD.h"
+#import "Image+CD.h"
 
 @interface DistrictTVC ()
 
@@ -73,6 +74,22 @@
     cell.textLabel.text = district.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"images: %d", district.images.count];
     
+    // use any old image for now
+    if (district.images.count > 0) {
+        Image *selectedImage = [district.images anyObject];
+        NSURL *imgUrl = [Image getLocalUrlFromPathThumb:selectedImage.path];
+        UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:imgUrl]];
+        dlog(@"cell image view: %@", cell.imageView);
+        cell.imageView.image = img;
+    }
+    
+//    UIColor *bgcolor = [UIColor blackColor];
+//    cell.contentView.backgroundColor = bgcolor;
+//    cell.textLabel.backgroundColor = bgcolor;
+//    cell.detailTextLabel.backgroundColor = bgcolor;
+//    cell.accessoryView.backgroundColor = bgcolor;
+//    cell.editingAccessoryView.backgroundColor = bgcolor;
+    
     return cell;
 }
 
@@ -84,3 +101,11 @@
 }
 
 @end
+
+
+
+
+
+
+
+

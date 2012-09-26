@@ -10,6 +10,7 @@
 #import "Fetcher.h"
 #import "District+CD.h"
 #import "Image+CD.h"
+#import "MainDao.h"
 
 @interface Sync ()
 @property (nonatomic, strong) NSManagedObjectContext *context;
@@ -17,19 +18,27 @@
 
 @implementation Sync
 
+//
+// new instance
+//
 + (Sync *) createWithContext:(NSManagedObjectContext *)context {
     Sync *sync = [[Sync alloc] init];
     sync.context = context;
     return sync;
 }
 
+//
+// fetch json and persist to core data
+//
 - (void) syncDistricts {
     dlog();
     
     // fetch districts json via http
     Fetcher *fetcher = [[Fetcher alloc] init];
     
-    [fetcher fetch:URL_DISTRICT withBlock:^(NSData *data){
+    NSURL *fetchUrl = [NSURL URLWithString:URL_DISTRICT];
+    
+    [fetcher fetch:fetchUrl withBlock:^(NSData *data){
         dlog(@"data length: %d", data.length);
         
         NSError *err = nil;
@@ -85,41 +94,49 @@
     }
 }
 
+//
+// attempt to store each image path from database to file on disk cache
+//
 - (void) syncImages {
     dlog();
 
-    // get district data
-    id ds = [[NSUserDefaults standardUserDefaults] objectForKey:DISTRICT_KEY];
-    
-    if (ds) {
-        NSArray *districts = (NSArray *) ds;
-        // grab each image and store it
-        for (int i=0; i < districts.count; i++) {
-            NSArray *images = [districts[i] objectForKey:@"images"];
-            for (int j=0; j < images.count; j++) {
-                [self storeImage:images[j][@"path"]];
-            }
+    MainDao *mainDao = [MainDao createWithContext:self.context];
+    NSArray *districts = [mainDao findAll];
+
+    // grab each image and store it
+    for (District *dist in districts) {
+        for (Image *img in dist.images) {
+            [self storeImage:img.path];
         }
     }
 }
 
+//
+// fetch and store path
+//
 - (void) storeImage:(NSString *) path {
-    NSString *fthumb = [@"thumb_" stringByAppendingString:path];
-    NSString *fpath = [[BASE_IMAGE_URL stringByAppendingString:@"/"]
-                       stringByAppendingString:fthumb];
-    dlog(@"fpath: %@", fpath);
     
+    // generate remote url
+    NSURL *remoteUrl = [Image getRemoteUrlFromPathThumb:path];
+    
+    // generate local file url
+    NSURL *localUrl = [Image getLocalUrlFromPathThumb:path];
+    
+    // only fetch if file does not exist
+    BOOL fileExists = [localUrl checkResourceIsReachableAndReturnError:nil];
+    
+    if (fileExists) return;
+    
+    dlog(@"about to fetch url: %@", remoteUrl);
+
     Fetcher *fetcher = [[Fetcher alloc] init];
-    [fetcher fetch:fpath withBlock:^(NSData *data){
+    [fetcher fetch:remoteUrl withBlock:^(NSData *data){
         dlog(@"data length: %d", data.length);
-        
-        // write data to cache dir
-        NSString *cacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-        NSURL *fp = [NSURL fileURLWithPathComponents:@[cacheDir, fthumb]];
-        dlog(@"writing to file: %@", fp);
-        [data writeToURL:fp atomically:YES];
+        dlog(@"writing to file: %@", localUrl);
+        [data writeToURL:localUrl atomically:YES];
     }];
     
 }
 
 @end
+

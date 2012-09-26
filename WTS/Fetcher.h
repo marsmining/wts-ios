@@ -12,6 +12,6 @@ typedef void (^onSuccess)(NSData *);
 
 @interface Fetcher : NSObject
 
-- (void) fetch:(NSString *) url withBlock:(onSuccess) block;
+- (void) fetch:(NSURL *) url withBlock:(onSuccess) block;
 
 @end

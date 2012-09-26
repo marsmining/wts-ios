@@ -15,18 +15,10 @@
 
 @implementation MainViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    dlog();
-}
-
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     dlog(@"segue: %@", [segue identifier]);
     
     id dvc = [segue destinationViewController];
-    
-    dlog(@"dvc class: %@", [dvc class]);
     
     if ([dvc isKindOfClass:[UINavigationController class]]) {
         
@@ -34,7 +26,9 @@
         UINavigationController *uinc = (UINavigationController *) dvc;
         id vvc = [uinc visibleViewController];
         DistrictTVC *dtvc = (DistrictTVC *) vvc;
-        dtvc.districts = [self.mainDao findAll];
+        
+        // set the model of the view control we are segue'ing to
+        dtvc.districts = [self.mainDao findAllWithImages];
     }
 }
 

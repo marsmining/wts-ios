@@ -10,8 +10,15 @@
 
 @interface Sync : NSObject
 
+//
+// helper for creation
+//
 + (Sync *) createWithContext:(NSManagedObjectContext *)context;
 
+//
+// public api
+//
 - (void) syncDistricts;
+- (void) syncImages;
 
 @end

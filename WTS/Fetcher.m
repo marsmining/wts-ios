@@ -25,15 +25,13 @@
     return _content;
 }
 
-- (void) fetch:(NSString *) url withBlock:(onSuccess) block {
+- (void) fetch:(NSURL *) url withBlock:(onSuccess) block {
     dlog();
     
     myblock = block;
-    
-    NSURL *myurl = [[NSURL alloc] initWithString:url];
-    
+        
     // create the request.
-    NSURLRequest *myreq = [NSURLRequest requestWithURL:myurl
+    NSURLRequest *myreq = [NSURLRequest requestWithURL:url
                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                        timeoutInterval:10.0f];
     

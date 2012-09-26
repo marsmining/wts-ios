@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC0396AF160B880D008A3B3C /* DistrictTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0396AE160B880D008A3B3C /* DistrictTVC.m */; };
 		FC726FE0160C8F5400AEC01A /* ImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC726FDF160C8F5400AEC01A /* ImageVC.m */; };
+		FCA21ED2161353DE00AA2DF6 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA21ED1161353DE00AA2DF6 /* CoreDataTableViewController.m */; };
 		FCAF0FEE160B74FF00C7489E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FED160B74FF00C7489E /* UIKit.framework */; };
 		FCAF0FF0160B74FF00C7489E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FEF160B74FF00C7489E /* Foundation.framework */; };
 		FCAF0FF2160B74FF00C7489E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FF1160B74FF00C7489E /* CoreGraphics.framework */; };
@@ -40,6 +41,8 @@
 		FC0396AE160B880D008A3B3C /* DistrictTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictTVC.m; sourceTree = "<group>"; };
 		FC726FDE160C8F5400AEC01A /* ImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageVC.h; sourceTree = "<group>"; };
 		FC726FDF160C8F5400AEC01A /* ImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageVC.m; sourceTree = "<group>"; };
+		FCA21ED0161353DE00AA2DF6 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		FCA21ED1161353DE00AA2DF6 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		FCAF0FE9160B74FF00C7489E /* WTS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCAF0FED160B74FF00C7489E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FCAF0FEF160B74FF00C7489E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -137,18 +140,20 @@
 				FCF856D3161217840055CE22 /* Sync.m */,
 				FCF856571610D1160055CE22 /* Fetcher.h */,
 				FCF856581610D1160055CE22 /* Fetcher.m */,
-				FC0396AD160B880D008A3B3C /* DistrictTVC.h */,
-				FC0396AE160B880D008A3B3C /* DistrictTVC.m */,
 				FCF856F2161237FA0055CE22 /* MainDao.h */,
 				FCF856F3161237FB0055CE22 /* MainDao.m */,
 				FC726FDE160C8F5400AEC01A /* ImageVC.h */,
 				FC726FDF160C8F5400AEC01A /* ImageVC.m */,
+				FC0396AD160B880D008A3B3C /* DistrictTVC.h */,
+				FC0396AE160B880D008A3B3C /* DistrictTVC.m */,
 				FCBA9664160CD6CB001400AA /* ImageScrollView.h */,
 				FCBA9665160CD6CB001400AA /* ImageScrollView.m */,
 				FCAF0FFC160B74FF00C7489E /* MainAppDelegate.h */,
 				FCAF0FFD160B74FF00C7489E /* MainAppDelegate.m */,
 				FCAF100B160B74FF00C7489E /* MainViewController.h */,
 				FCAF100C160B74FF00C7489E /* MainViewController.m */,
+				FCA21ED0161353DE00AA2DF6 /* CoreDataTableViewController.h */,
+				FCA21ED1161353DE00AA2DF6 /* CoreDataTableViewController.m */,
 				FCAF1005160B74FF00C7489E /* MainStoryboard_iPhone.storyboard */,
 				FCAF1008160B74FF00C7489E /* MainStoryboard_iPad.storyboard */,
 				FCF856D516121DB80055CE22 /* MainModel.xcdatamodeld */,
@@ -257,6 +262,7 @@
 				FCF856F4161237FB0055CE22 /* MainDao.m in Sources */,
 				FCF856F81612FF310055CE22 /* District+CD.m in Sources */,
 				FCF856FB1612FF850055CE22 /* Image+CD.m in Sources */,
+				FCA21ED2161353DE00AA2DF6 /* CoreDataTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
