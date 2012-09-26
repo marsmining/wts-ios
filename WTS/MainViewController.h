@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainDao.h"
 
 @interface MainViewController : UIViewController
+
+@property (nonatomic, strong) MainDao *mainDao;
+
+@property (nonatomic, weak) IBOutlet UILabel *statusLabel;
+@property (nonatomic, weak) IBOutlet UIProgressView *progress;
 
 @end

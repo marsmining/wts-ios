@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "DistrictTVC.h"
 
 @interface MainViewController ()
 
@@ -17,13 +18,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    dlog();
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    dlog(@"segue: %@", [segue identifier]);
+    
+    id dvc = [segue destinationViewController];
+    
+    dlog(@"dvc class: %@", [dvc class]);
+    
+    if ([dvc isKindOfClass:[UINavigationController class]]) {
+        
+        dlog(@"setting dvc model");
+        UINavigationController *uinc = (UINavigationController *) dvc;
+        id vvc = [uinc visibleViewController];
+        DistrictTVC *dtvc = (DistrictTVC *) vvc;
+        dtvc.districts = [self.mainDao findAll];
+    }
 }
 
 @end

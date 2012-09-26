@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC0396AF160B880D008A3B3C /* DistrictTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0396AE160B880D008A3B3C /* DistrictTVC.m */; };
+		FC726FE0160C8F5400AEC01A /* ImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC726FDF160C8F5400AEC01A /* ImageVC.m */; };
 		FCAF0FEE160B74FF00C7489E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FED160B74FF00C7489E /* UIKit.framework */; };
 		FCAF0FF0160B74FF00C7489E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FEF160B74FF00C7489E /* Foundation.framework */; };
 		FCAF0FF2160B74FF00C7489E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FF1160B74FF00C7489E /* CoreGraphics.framework */; };
@@ -19,9 +21,25 @@
 		FCAF1007160B74FF00C7489E /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCAF1005160B74FF00C7489E /* MainStoryboard_iPhone.storyboard */; };
 		FCAF100A160B74FF00C7489E /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCAF1008160B74FF00C7489E /* MainStoryboard_iPad.storyboard */; };
 		FCAF100D160B74FF00C7489E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAF100C160B74FF00C7489E /* MainViewController.m */; };
+		FCAF1014160B7A1800C7489E /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = FCAF1013160B7A1800C7489E /* Icon-57.png */; };
+		FCAF1016160B7ACD00C7489E /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = FCAF1015160B7ACD00C7489E /* Icon-114.png */; };
+		FCBA9666160CD6CB001400AA /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBA9665160CD6CB001400AA /* ImageScrollView.m */; };
+		FCF856591610D1160055CE22 /* Fetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF856581610D1160055CE22 /* Fetcher.m */; };
+		FCF856D4161217840055CE22 /* Sync.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF856D3161217840055CE22 /* Sync.m */; };
+		FCF856D716121DB80055CE22 /* MainModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCF856D516121DB80055CE22 /* MainModel.xcdatamodeld */; };
+		FCF856D9161220EC0055CE22 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF856D8161220EB0055CE22 /* CoreData.framework */; };
+		FCF856EE16122E460055CE22 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF856ED16122E460055CE22 /* Image.m */; };
+		FCF856F116122E470055CE22 /* District.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF856F016122E470055CE22 /* District.m */; };
+		FCF856F4161237FB0055CE22 /* MainDao.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF856F3161237FB0055CE22 /* MainDao.m */; };
+		FCF856F81612FF310055CE22 /* District+CD.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF856F71612FF310055CE22 /* District+CD.m */; };
+		FCF856FB1612FF850055CE22 /* Image+CD.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF856FA1612FF840055CE22 /* Image+CD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC0396AD160B880D008A3B3C /* DistrictTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictTVC.h; sourceTree = "<group>"; };
+		FC0396AE160B880D008A3B3C /* DistrictTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictTVC.m; sourceTree = "<group>"; };
+		FC726FDE160C8F5400AEC01A /* ImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageVC.h; sourceTree = "<group>"; };
+		FC726FDF160C8F5400AEC01A /* ImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageVC.m; sourceTree = "<group>"; };
 		FCAF0FE9160B74FF00C7489E /* WTS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCAF0FED160B74FF00C7489E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FCAF0FEF160B74FF00C7489E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -39,6 +57,26 @@
 		FCAF1009160B74FF00C7489E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		FCAF100B160B74FF00C7489E /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		FCAF100C160B74FF00C7489E /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		FCAF1013160B7A1800C7489E /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-57.png"; path = "../Icon-57.png"; sourceTree = "<group>"; };
+		FCAF1015160B7ACD00C7489E /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-114.png"; path = "../Icon-114.png"; sourceTree = "<group>"; };
+		FCBA9664160CD6CB001400AA /* ImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollView.h; sourceTree = "<group>"; };
+		FCBA9665160CD6CB001400AA /* ImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollView.m; sourceTree = "<group>"; };
+		FCF856571610D1160055CE22 /* Fetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fetcher.h; sourceTree = "<group>"; };
+		FCF856581610D1160055CE22 /* Fetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fetcher.m; sourceTree = "<group>"; };
+		FCF856D2161217830055CE22 /* Sync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sync.h; sourceTree = "<group>"; };
+		FCF856D3161217840055CE22 /* Sync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sync.m; sourceTree = "<group>"; };
+		FCF856D616121DB80055CE22 /* MainModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MainModel.xcdatamodel; sourceTree = "<group>"; };
+		FCF856D8161220EB0055CE22 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FCF856EC16122E460055CE22 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		FCF856ED16122E460055CE22 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		FCF856EF16122E470055CE22 /* District.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = District.h; sourceTree = "<group>"; };
+		FCF856F016122E470055CE22 /* District.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = District.m; sourceTree = "<group>"; };
+		FCF856F2161237FA0055CE22 /* MainDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainDao.h; sourceTree = "<group>"; };
+		FCF856F3161237FB0055CE22 /* MainDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainDao.m; sourceTree = "<group>"; };
+		FCF856F61612FF310055CE22 /* District+CD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "District+CD.h"; sourceTree = "<group>"; };
+		FCF856F71612FF310055CE22 /* District+CD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "District+CD.m"; sourceTree = "<group>"; };
+		FCF856F91612FF840055CE22 /* Image+CD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Image+CD.h"; sourceTree = "<group>"; };
+		FCF856FA1612FF840055CE22 /* Image+CD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Image+CD.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF856D9161220EC0055CE22 /* CoreData.framework in Frameworks */,
 				FCAF0FEE160B74FF00C7489E /* UIKit.framework in Frameworks */,
 				FCAF0FF0160B74FF00C7489E /* Foundation.framework in Frameworks */,
 				FCAF0FF2160B74FF00C7489E /* CoreGraphics.framework in Frameworks */,
@@ -75,6 +114,7 @@
 		FCAF0FEC160B74FF00C7489E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCF856D8161220EB0055CE22 /* CoreData.framework */,
 				FCAF0FED160B74FF00C7489E /* UIKit.framework */,
 				FCAF0FEF160B74FF00C7489E /* Foundation.framework */,
 				FCAF0FF1160B74FF00C7489E /* CoreGraphics.framework */,
@@ -85,12 +125,33 @@
 		FCAF0FF3160B74FF00C7489E /* WTS */ = {
 			isa = PBXGroup;
 			children = (
+				FCF856EF16122E470055CE22 /* District.h */,
+				FCF856F016122E470055CE22 /* District.m */,
+				FCF856F61612FF310055CE22 /* District+CD.h */,
+				FCF856F71612FF310055CE22 /* District+CD.m */,
+				FCF856EC16122E460055CE22 /* Image.h */,
+				FCF856ED16122E460055CE22 /* Image.m */,
+				FCF856F91612FF840055CE22 /* Image+CD.h */,
+				FCF856FA1612FF840055CE22 /* Image+CD.m */,
+				FCF856D2161217830055CE22 /* Sync.h */,
+				FCF856D3161217840055CE22 /* Sync.m */,
+				FCF856571610D1160055CE22 /* Fetcher.h */,
+				FCF856581610D1160055CE22 /* Fetcher.m */,
+				FC0396AD160B880D008A3B3C /* DistrictTVC.h */,
+				FC0396AE160B880D008A3B3C /* DistrictTVC.m */,
+				FCF856F2161237FA0055CE22 /* MainDao.h */,
+				FCF856F3161237FB0055CE22 /* MainDao.m */,
+				FC726FDE160C8F5400AEC01A /* ImageVC.h */,
+				FC726FDF160C8F5400AEC01A /* ImageVC.m */,
+				FCBA9664160CD6CB001400AA /* ImageScrollView.h */,
+				FCBA9665160CD6CB001400AA /* ImageScrollView.m */,
 				FCAF0FFC160B74FF00C7489E /* MainAppDelegate.h */,
 				FCAF0FFD160B74FF00C7489E /* MainAppDelegate.m */,
-				FCAF1005160B74FF00C7489E /* MainStoryboard_iPhone.storyboard */,
-				FCAF1008160B74FF00C7489E /* MainStoryboard_iPad.storyboard */,
 				FCAF100B160B74FF00C7489E /* MainViewController.h */,
 				FCAF100C160B74FF00C7489E /* MainViewController.m */,
+				FCAF1005160B74FF00C7489E /* MainStoryboard_iPhone.storyboard */,
+				FCAF1008160B74FF00C7489E /* MainStoryboard_iPad.storyboard */,
+				FCF856D516121DB80055CE22 /* MainModel.xcdatamodeld */,
 				FCAF0FF4160B74FF00C7489E /* Supporting Files */,
 			);
 			path = WTS;
@@ -99,6 +160,8 @@
 		FCAF0FF4160B74FF00C7489E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FCAF1015160B7ACD00C7489E /* Icon-114.png */,
+				FCAF1013160B7A1800C7489E /* Icon-57.png */,
 				FCAF0FF5160B74FF00C7489E /* WTS-Info.plist */,
 				FCAF0FF6160B74FF00C7489E /* InfoPlist.strings */,
 				FCAF0FF9160B74FF00C7489E /* main.m */,
@@ -168,6 +231,8 @@
 				FCAF1004160B74FF00C7489E /* Default-568h@2x.png in Resources */,
 				FCAF1007160B74FF00C7489E /* MainStoryboard_iPhone.storyboard in Resources */,
 				FCAF100A160B74FF00C7489E /* MainStoryboard_iPad.storyboard in Resources */,
+				FCAF1014160B7A1800C7489E /* Icon-57.png in Resources */,
+				FCAF1016160B7ACD00C7489E /* Icon-114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +246,17 @@
 				FCAF0FFA160B74FF00C7489E /* main.m in Sources */,
 				FCAF0FFE160B74FF00C7489E /* MainAppDelegate.m in Sources */,
 				FCAF100D160B74FF00C7489E /* MainViewController.m in Sources */,
+				FC0396AF160B880D008A3B3C /* DistrictTVC.m in Sources */,
+				FC726FE0160C8F5400AEC01A /* ImageVC.m in Sources */,
+				FCBA9666160CD6CB001400AA /* ImageScrollView.m in Sources */,
+				FCF856591610D1160055CE22 /* Fetcher.m in Sources */,
+				FCF856D4161217840055CE22 /* Sync.m in Sources */,
+				FCF856D716121DB80055CE22 /* MainModel.xcdatamodeld in Sources */,
+				FCF856EE16122E460055CE22 /* Image.m in Sources */,
+				FCF856F116122E470055CE22 /* District.m in Sources */,
+				FCF856F4161237FB0055CE22 /* MainDao.m in Sources */,
+				FCF856F81612FF310055CE22 /* District+CD.m in Sources */,
+				FCF856FB1612FF850055CE22 /* Image+CD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,8 +382,22 @@
 				FCAF1012160B74FF00C7489E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FCF856D516121DB80055CE22 /* MainModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FCF856D616121DB80055CE22 /* MainModel.xcdatamodel */,
+			);
+			currentVersion = FCF856D616121DB80055CE22 /* MainModel.xcdatamodel */;
+			path = MainModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FCAF0FE0160B74FF00C7489E /* Project object */;
 }

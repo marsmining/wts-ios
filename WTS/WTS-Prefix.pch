@@ -12,3 +12,18 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define URL_DISTRICT @"http://ec2.ockhamsolutions.de/wts/app/api/district"
+
+#define DISTRICT_KEY @"WTS.districts"
+
+#define BASE_IMAGE_URL @"http://d3lk74x2ypu2bo.cloudfront.net"
+
+
+#ifdef DEBUG
+#define dlog(format, ...) \
+NSLog(@"<%s:%d> %s -> " format, \
+strrchr("/" __FILE__, '/') + 1, __LINE__, __PRETTY_FUNCTION__, ## __VA_ARGS__)
+#else
+#define dlog(format, ...)
+#endif

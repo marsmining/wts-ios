@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1810" systemVersion="12C54" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="District" representedClassName="District" syncable="YES">
+        <attribute name="ident" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Image" inverseName="district" inverseEntity="Image" syncable="YES"/>
+    </entity>
+    <entity name="Image" representedClassName="Image" syncable="YES">
+        <attribute name="ident" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="district" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="District" inverseName="images" inverseEntity="District" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="District" positionX="-45" positionY="261" width="128" height="88"/>
+        <element name="Image" positionX="160" positionY="192" width="128" height="88"/>
+    </elements>
+</model>
