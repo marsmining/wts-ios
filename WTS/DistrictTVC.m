@@ -17,8 +17,6 @@
 
 @implementation DistrictTVC
 
-@synthesize districts = _districts;
-
 - (void) viewDidLoad {
     [super viewDidLoad];
 }
@@ -38,7 +36,7 @@
         UITableViewCell *cell = (UITableViewCell *) sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         
-        District *district = self.districts[indexPath.row];
+        District *district = [self.fetchedResultsController objectAtIndexPath:indexPath];
         
         if (district.images.count == 0) {
             return;
@@ -52,24 +50,13 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    dlog();
-    return self.districts.count;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"District Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    District *district = self.districts[indexPath.row];
+    District *district = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     cell.textLabel.text = district.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"images: %d", district.images.count];

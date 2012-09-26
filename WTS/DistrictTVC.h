@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataTableViewController.h"
 
-@interface DistrictTVC : UITableViewController
-
-@property (nonatomic, strong) NSArray *districts;
+@interface DistrictTVC : CoreDataTableViewController
 
 @end

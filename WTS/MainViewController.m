@@ -28,7 +28,14 @@
         DistrictTVC *dtvc = (DistrictTVC *) vvc;
         
         // set the model of the view control we are segue'ing to
-        dtvc.districts = [self.mainDao findAllWithImages];
+        
+        NSFetchedResultsController *frc = [[NSFetchedResultsController alloc]
+                                           initWithFetchRequest:self.mainDao.fetchRequestAllWithImages
+                                           managedObjectContext:self.mainDao.context
+                                           sectionNameKeyPath:nil
+                                           cacheName:nil];
+        
+        dtvc.fetchedResultsController = frc;
     }
 }
 

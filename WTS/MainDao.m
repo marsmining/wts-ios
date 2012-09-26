@@ -18,7 +18,30 @@
     return mainDao;
 }
 
+- (NSArray *) execute:(NSFetchRequest *) request {
+    dlog();
+    
+    // execute
+    NSError *error = nil;
+    NSArray *fetchResults = [self.context executeFetchRequest:request error:&error];
+    if (fetchResults == nil) {
+        dlog("error executing fetch request");
+    }
+    
+    return fetchResults;
+}
+
 - (NSArray *) findAll {
+    dlog();
+    return [self execute:self.fetchRequestAll];
+}
+
+- (NSArray *) findAllWithImages {
+    dlog();
+    return [self execute:self.fetchRequestAllWithImages];
+}
+
+- (NSFetchRequest *) fetchRequestAll {
     dlog();
     
     // fetch request
@@ -32,25 +55,15 @@
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [request setSortDescriptors:sortDescriptors];
     
-    // execute
-    NSError *error = nil;
-    NSArray *fetchResults = [self.context executeFetchRequest:request error:&error];
-    if (fetchResults == nil) {
-        // handle the error
-    }
-    
-    return fetchResults;
+    return request;
 }
 
-- (NSArray *) findAllWithImages {
-    
-    NSMutableArray *filtered = [NSMutableArray array];
-    
-    for (District *dist in [self findAll]) {
-        if (dist.images.count > 0) [filtered addObject:dist];
-    }
-    
-    return filtered;
+- (NSFetchRequest *) fetchRequestAllWithImages {
+    dlog();
+
+    NSFetchRequest *request = self.fetchRequestAll;
+    request.predicate = [NSPredicate predicateWithFormat:@"images.@count > 0"];
+    return request;
 }
 
 @end

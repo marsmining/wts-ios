@@ -19,4 +19,8 @@
 
 - (NSArray *) findAllWithImages;
 
+- (NSFetchRequest *) fetchRequestAll;
+
+- (NSFetchRequest *) fetchRequestAllWithImages;
+
 @end
