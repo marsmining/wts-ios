@@ -30,9 +30,9 @@
     MainViewController *mvc = (MainViewController *) self.window.rootViewController;
     mvc.mainDao = [MainDao createWithContext:context];
     
-//    Sync *syncer = [Sync createWithContext:context];
-//    [syncer syncDistricts];
-//    [syncer syncImages];
+    Sync *syncer = [Sync createWithContext:context];
+    [syncer syncDistricts];
+    [syncer syncImages];
     
     return YES;
 }

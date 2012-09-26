@@ -32,7 +32,7 @@
         NSFetchedResultsController *frc = [[NSFetchedResultsController alloc]
                                            initWithFetchRequest:self.mainDao.fetchRequestAllWithImages
                                            managedObjectContext:self.mainDao.context
-                                           sectionNameKeyPath:nil
+                                           sectionNameKeyPath:@"parent"
                                            cacheName:nil];
         
         dtvc.fetchedResultsController = frc;

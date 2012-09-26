@@ -2,7 +2,7 @@
 //  District.h
 //  WTS
 //
-//  Created by foo on 9/25/12.
+//  Created by foo on 9/26/12.
 //  Copyright (c) 2012 Ockham Solutions GmbH. All rights reserved.
 //
 
@@ -13,8 +13,9 @@
 
 @interface District : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * ident;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * parent;
 @property (nonatomic, retain) NSSet *images;
 @end
 

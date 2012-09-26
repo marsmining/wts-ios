@@ -19,6 +19,7 @@
     
     NSNumber *uid = dict[@"id"];
     NSString *name = dict[@"name"];
+    NSString *parent = dict[@"parent"];
     
     dlog(@"district[id=%@. name=%@]", uid, name);
     
@@ -38,6 +39,7 @@
                                     inManagedObjectContext:ctx];
     entity.ident = uid;
     entity.name = name;
+    entity.parent = parent;
     
     return entity;
 }

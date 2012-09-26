@@ -32,6 +32,7 @@
     
     NSNumber *uid = dict[@"id"];
     NSString *path = dict[@"path"];
+    NSNumber *idx = dict[@"idx"];
     
     dlog(@"image[id=%@. path=%@]", uid, path);
     
@@ -51,6 +52,7 @@
                               inManagedObjectContext:ctx];
     entity.ident = uid;
     entity.path = path;
+    entity.idx = idx;
 
     return entity;
 }

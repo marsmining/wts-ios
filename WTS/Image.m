@@ -2,7 +2,7 @@
 //  Image.m
 //  WTS
 //
-//  Created by foo on 9/25/12.
+//  Created by foo on 9/26/12.
 //  Copyright (c) 2012 Ockham Solutions GmbH. All rights reserved.
 //
 
@@ -12,8 +12,9 @@
 
 @implementation Image
 
-@dynamic path;
 @dynamic ident;
+@dynamic path;
+@dynamic idx;
 @dynamic district;
 
 @end
