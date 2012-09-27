@@ -89,9 +89,6 @@ static NSString *CellIdentifier = @"DistrictCell";
         cell.thumb.image = img;
     }
 
-//    cell.selectionStyle = UITableViewCellSeparatorStyleNone;
-//    cell.indentationLevel = 0;
-
     cell.title.text = district.name;
     cell.subtitle.text = [NSString stringWithFormat:@"image count: %d", district.images.count];
     return cell;
@@ -99,6 +96,9 @@ static NSString *CellIdentifier = @"DistrictCell";
 
 #pragma mark - Table view delegate
 
+//
+// district selected, so grab array of paths and give to controller.
+//
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     dlog();
     
@@ -110,7 +110,12 @@ static NSString *CellIdentifier = @"DistrictCell";
     
     dlog(@"setting dvc model");
     ImageVC *ivc = [[ImageVC alloc] init];
-    ivc.path = [[district.images anyObject] path];
+    
+    NSMutableArray *paths = [NSMutableArray arrayWithCapacity:district.images.count];
+    for (Image *img in district.images) {
+        [paths addObject:[NSURL URLWithString:[[BASE_IMAGE_URL stringByAppendingString:@"/"] stringByAppendingString:img.path]]];
+    }
+    ivc.paths = paths;
     
     [self.navigationController pushViewController:ivc animated:YES];
 }

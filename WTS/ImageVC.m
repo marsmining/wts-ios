@@ -1,19 +1,21 @@
 //
 //  ImageVC.m
-//  WTS
 //
 //  Created by foo on 9/21/12.
 //  Copyright (c) 2012 Ockham Solutions GmbH. All rights reserved.
 //
 
 #import "ImageVC.h"
-
-@interface ImageVC ()
-@end
+#import "ImageScrollViewController.h"
 
 @implementation ImageVC
 
-@synthesize scroller = _scroller;
+// grab image synchronously.. yuk
+- (UIImage *) grab:(NSUInteger)index {
+    UIImage *myimg = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.paths[index]]];
+    dlog(@"myimg size: %f x %f", myimg.size.width, myimg.size.height);
+    return myimg;
+}
 
 - (IBAction)back:(id)sender {
     dlog();
@@ -28,19 +30,55 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    dlog("image path: %@", self.path);
+    dlog("image paths: %@", self.paths);
     
-    NSURL *myurl = [NSURL URLWithString:[[BASE_IMAGE_URL stringByAppendingString:@"/"] stringByAppendingString:self.path]];
-    UIImage *myimg = [UIImage imageWithData:[NSData dataWithContentsOfURL:myurl]];
+    ImageScrollViewController *seed = [ImageScrollViewController createWithImage:[self grab:0] andIndex:0];
     
-    dlog(@"myimg size: %f x %f", myimg.size.width, myimg.size.height);
+    UIPageViewController *pvc =
+        [[UIPageViewController alloc]
+         initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl
+         navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
+         options:nil];
     
-    self.scroller = [[ImageScrollView alloc] initWithFrame:self.view.frame];
-    self.scroller.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:self.scroller];
+    pvc.dataSource = self;
     
-    [self.scroller displayImage:myimg];
-    [self.scroller setNeedsDisplay];
+    [pvc setViewControllers:@[seed]
+                  direction:UIPageViewControllerNavigationDirectionForward
+                   animated:NO
+                 completion:NULL];
+    
+    [self addChildViewController:pvc];
+    [self.view addSubview:pvc.view];
+
+//    self.scroller = [[ImageScrollView alloc] initWithFrame:self.view.frame];
+//    self.scroller.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    [self.view addSubview:self.scroller];
+//    
+//    [self.scroller displayImage:myimg];
+//    [self.scroller setNeedsDisplay];
+}
+
+#pragma mark UIPageViewControllerDataSource methods
+
+// before
+- (UIViewController *)pageViewController:(UIPageViewController *)pvc viewControllerBeforeViewController:(ImageScrollViewController *)vc {
+    dlog();
+    NSUInteger idx = self.paths.count - 1; // reset index
+    NSUInteger cur = [vc getIndex];
+    if (cur > 0) idx = cur - 1;
+    return [ImageScrollViewController createWithImage:[self grab:idx] andIndex:idx];
+}
+
+// after
+- (UIViewController *)pageViewController:(UIPageViewController *)pvc viewControllerAfterViewController:(ImageScrollViewController *)vc {
+    dlog();
+    NSUInteger idx = 0; // reset index
+    NSUInteger cur = [vc getIndex];
+    if (cur < self.paths.count - 1) idx = cur + 1;
+    return [ImageScrollViewController createWithImage:[self grab:idx] andIndex:idx];
 }
 
 @end
+
+
+

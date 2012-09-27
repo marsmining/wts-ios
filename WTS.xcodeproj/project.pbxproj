@@ -18,6 +18,7 @@
 		FCA21EE316144BD500AA2DF6 /* DistrictCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA21EE216144BD500AA2DF6 /* DistrictCell.m */; };
 		FCACE0331614D31F00AA3161 /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = FCACE0311614D31F00AA3161 /* Icon-57.png */; };
 		FCACE0341614D31F00AA3161 /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = FCACE0321614D31F00AA3161 /* Icon-114.png */; };
+		FCACE03B1614EBCF00AA3161 /* ImageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCACE03A1614EBCF00AA3161 /* ImageScrollViewController.m */; };
 		FCAF0FEE160B74FF00C7489E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FED160B74FF00C7489E /* UIKit.framework */; };
 		FCAF0FF0160B74FF00C7489E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FEF160B74FF00C7489E /* Foundation.framework */; };
 		FCAF0FF2160B74FF00C7489E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FF1160B74FF00C7489E /* CoreGraphics.framework */; };
@@ -58,6 +59,8 @@
 		FCA21EE216144BD500AA2DF6 /* DistrictCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictCell.m; sourceTree = "<group>"; };
 		FCACE0311614D31F00AA3161 /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57.png"; sourceTree = "<group>"; };
 		FCACE0321614D31F00AA3161 /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-114.png"; sourceTree = "<group>"; };
+		FCACE0391614EBCF00AA3161 /* ImageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollViewController.h; sourceTree = "<group>"; };
+		FCACE03A1614EBCF00AA3161 /* ImageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollViewController.m; sourceTree = "<group>"; };
 		FCAF0FE9160B74FF00C7489E /* WTS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCAF0FED160B74FF00C7489E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FCAF0FEF160B74FF00C7489E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -149,6 +152,8 @@
 				FC726FDF160C8F5400AEC01A /* ImageVC.m */,
 				FCBA9664160CD6CB001400AA /* ImageScrollView.h */,
 				FCBA9665160CD6CB001400AA /* ImageScrollView.m */,
+				FCACE0391614EBCF00AA3161 /* ImageScrollViewController.h */,
+				FCACE03A1614EBCF00AA3161 /* ImageScrollViewController.m */,
 				FCAF0FFC160B74FF00C7489E /* MainAppDelegate.h */,
 				FCAF0FFD160B74FF00C7489E /* MainAppDelegate.m */,
 				FCAF100B160B74FF00C7489E /* MainViewController.h */,
@@ -281,6 +286,7 @@
 				FCA21ED61613712300AA2DF6 /* Image.m in Sources */,
 				FCA21ED91613712300AA2DF6 /* District.m in Sources */,
 				FCA21EE316144BD500AA2DF6 /* DistrictCell.m in Sources */,
+				FCACE03B1614EBCF00AA3161 /* ImageScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
