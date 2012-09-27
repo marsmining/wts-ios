@@ -28,8 +28,6 @@
 		FCAF1007160B74FF00C7489E /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCAF1005160B74FF00C7489E /* MainStoryboard_iPhone.storyboard */; };
 		FCAF100A160B74FF00C7489E /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCAF1008160B74FF00C7489E /* MainStoryboard_iPad.storyboard */; };
 		FCAF100D160B74FF00C7489E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAF100C160B74FF00C7489E /* MainViewController.m */; };
-		FCAF1014160B7A1800C7489E /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = FCAF1013160B7A1800C7489E /* Icon-57.png */; };
-		FCAF1016160B7ACD00C7489E /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = FCAF1015160B7ACD00C7489E /* Icon-114.png */; };
 		FCBA9666160CD6CB001400AA /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBA9665160CD6CB001400AA /* ImageScrollView.m */; };
 		FCF856591610D1160055CE22 /* Fetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF856581610D1160055CE22 /* Fetcher.m */; };
 		FCF856D4161217840055CE22 /* Sync.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF856D3161217840055CE22 /* Sync.m */; };
@@ -73,8 +71,6 @@
 		FCAF1009160B74FF00C7489E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		FCAF100B160B74FF00C7489E /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		FCAF100C160B74FF00C7489E /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		FCAF1013160B7A1800C7489E /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-57.png"; path = "../Icon-57.png"; sourceTree = "<group>"; };
-		FCAF1015160B7ACD00C7489E /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-114.png"; path = "../Icon-114.png"; sourceTree = "<group>"; };
 		FCBA9664160CD6CB001400AA /* ImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollView.h; sourceTree = "<group>"; };
 		FCBA9665160CD6CB001400AA /* ImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollView.m; sourceTree = "<group>"; };
 		FCF856571610D1160055CE22 /* Fetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fetcher.h; sourceTree = "<group>"; };
@@ -180,8 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				FCA21EDA1613998900AA2DF6 /* 45degreee_fabric.gif */,
-				FCAF1015160B7ACD00C7489E /* Icon-114.png */,
-				FCAF1013160B7A1800C7489E /* Icon-57.png */,
 				FCAF0FF5160B74FF00C7489E /* WTS-Info.plist */,
 				FCAF0FF6160B74FF00C7489E /* InfoPlist.strings */,
 				FCAF0FF9160B74FF00C7489E /* main.m */,
@@ -251,8 +245,6 @@
 				FCAF1004160B74FF00C7489E /* Default-568h@2x.png in Resources */,
 				FCAF1007160B74FF00C7489E /* MainStoryboard_iPhone.storyboard in Resources */,
 				FCAF100A160B74FF00C7489E /* MainStoryboard_iPad.storyboard in Resources */,
-				FCAF1014160B7A1800C7489E /* Icon-57.png in Resources */,
-				FCAF1016160B7ACD00C7489E /* Icon-114.png in Resources */,
 				FCA21EDB1613998900AA2DF6 /* 45degreee_fabric.gif in Resources */,
 				FCA21EE016144B8700AA2DF6 /* DistrictCell.xib in Resources */,
 			);
