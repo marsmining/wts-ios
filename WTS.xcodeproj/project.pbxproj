@@ -16,6 +16,8 @@
 		FCA21EDB1613998900AA2DF6 /* 45degreee_fabric.gif in Resources */ = {isa = PBXBuildFile; fileRef = FCA21EDA1613998900AA2DF6 /* 45degreee_fabric.gif */; };
 		FCA21EE016144B8700AA2DF6 /* DistrictCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA21EDF16144B8700AA2DF6 /* DistrictCell.xib */; };
 		FCA21EE316144BD500AA2DF6 /* DistrictCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA21EE216144BD500AA2DF6 /* DistrictCell.m */; };
+		FCACE0331614D31F00AA3161 /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = FCACE0311614D31F00AA3161 /* Icon-57.png */; };
+		FCACE0341614D31F00AA3161 /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = FCACE0321614D31F00AA3161 /* Icon-114.png */; };
 		FCAF0FEE160B74FF00C7489E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FED160B74FF00C7489E /* UIKit.framework */; };
 		FCAF0FF0160B74FF00C7489E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FEF160B74FF00C7489E /* Foundation.framework */; };
 		FCAF0FF2160B74FF00C7489E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FF1160B74FF00C7489E /* CoreGraphics.framework */; };
@@ -54,6 +56,8 @@
 		FCA21EDF16144B8700AA2DF6 /* DistrictCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DistrictCell.xib; sourceTree = "<group>"; };
 		FCA21EE116144BD500AA2DF6 /* DistrictCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictCell.h; sourceTree = "<group>"; };
 		FCA21EE216144BD500AA2DF6 /* DistrictCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictCell.m; sourceTree = "<group>"; };
+		FCACE0311614D31F00AA3161 /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57.png"; sourceTree = "<group>"; };
+		FCACE0321614D31F00AA3161 /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-114.png"; sourceTree = "<group>"; };
 		FCAF0FE9160B74FF00C7489E /* WTS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCAF0FED160B74FF00C7489E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FCAF0FEF160B74FF00C7489E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -175,6 +179,8 @@
 		FCAF0FF4160B74FF00C7489E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FCACE0311614D31F00AA3161 /* Icon-57.png */,
+				FCACE0321614D31F00AA3161 /* Icon-114.png */,
 				FCA21EDA1613998900AA2DF6 /* 45degreee_fabric.gif */,
 				FCAF0FF5160B74FF00C7489E /* WTS-Info.plist */,
 				FCAF0FF6160B74FF00C7489E /* InfoPlist.strings */,
@@ -247,6 +253,8 @@
 				FCAF100A160B74FF00C7489E /* MainStoryboard_iPad.storyboard in Resources */,
 				FCA21EDB1613998900AA2DF6 /* 45degreee_fabric.gif in Resources */,
 				FCA21EE016144B8700AA2DF6 /* DistrictCell.xib in Resources */,
+				FCACE0331614D31F00AA3161 /* Icon-57.png in Resources */,
+				FCACE0341614D31F00AA3161 /* Icon-114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
