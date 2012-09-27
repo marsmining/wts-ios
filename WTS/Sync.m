@@ -28,6 +28,29 @@
 }
 
 //
+// fetch json to populate our database
+// be notified as each image entity is added, to grab thumbnail
+//
+- (void) syncAll {
+    dlog();
+
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self
+           selector:@selector(entityChanged:)
+               name:NSManagedObjectContextObjectsDidChangeNotification
+             object:nil];
+    
+    [self syncDistricts];
+}
+
+- (void) entityChanged:(NSNotification *) notice {
+    dlog();
+    
+    // just do the whole shebang now
+    [self syncImages];
+}
+
+//
 // fetch json and persist to core data
 //
 - (void) syncDistricts {

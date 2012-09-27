@@ -10,18 +10,28 @@
 #import "ImageVC.h"
 #import "District+CD.h"
 #import "Image+CD.h"
-#import "SimpleTableViewCell.h"
+#import "DistrictCell.h"
+
+static NSString *CellIdentifier = @"DistrictCell";
 
 @interface DistrictTVC ()
-
+@property (nonatomic, strong) UINib *nibForCell;
 @end
 
 @implementation DistrictTVC
 
+- (UINib *) nibForCell {
+    if (!_nibForCell) {
+        _nibForCell = [UINib nibWithNibName:CellIdentifier bundle:[NSBundle mainBundle]];
+        dlog(@"uinib: %@", [_nibForCell instantiateWithOwner:self options:nil]);
+    }
+    return _nibForCell;
+}
+
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.rowHeight = 70.0;
+    self.tableView.rowHeight = 77.0;
 
     // background of table view
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"45degreee_fabric.gif"]];
@@ -29,34 +39,14 @@
     self.tableView.backgroundView = tempImageView;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+
+    [self.tableView registerNib:self.nibForCell forCellReuseIdentifier:CellIdentifier];
 }
 
 - (IBAction)back:(id)sender
 {
     dlog();
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    dlog(@"segue: %@", [segue identifier]);
-        
-    id dvc = [segue destinationViewController];    
-    if ([dvc isKindOfClass:[ImageVC class]]) {
-        
-        UITableViewCell *cell = (UITableViewCell *) sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-        
-        District *district = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        
-        if (district.images.count == 0) {
-            return;
-        }
-        
-        dlog(@"setting dvc model");
-        ImageVC *ivc = (ImageVC *) dvc;
-        ivc.path = [[district.images anyObject] path];
-    }
 }
 
 #pragma mark - Table view data source
@@ -78,50 +68,51 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Custom District Cell";
-    UITableViewCell *cell; //= [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    DistrictCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
+                                                         forIndexPath:indexPath];
     
     if (!cell) {
-        // cell = [[SimpleTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-        cell = [[SimpleTableViewCell alloc] init];
+        dlog("error - dequeue should work");
+        cell = [[DistrictCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                   reuseIdentifier:CellIdentifier];
     }
     
     District *district = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-    cell.textLabel.text = district.name;
-    
-    // add label
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"images: %d", district.images.count];
-    
+
     // use any old image for now
-    if (district.images.count > 0) {
+    if (cell.thumb.image == nil && district.images.count > 0) {
         Image *selectedImage = [district.images anyObject];
         NSURL *imgUrl = [Image getLocalUrlFromPathThumb:selectedImage.path];
         UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:imgUrl]];
-        dlog(@"cell image view: %@", cell.imageView);
-        cell.imageView.image = img;
+        cell.thumb.image = img;
     }
-        
-    UIColor *bgcolor = [UIColor clearColor];
-    cell.contentView.backgroundColor = bgcolor;
-    cell.textLabel.backgroundColor = bgcolor;
-    cell.accessoryView.backgroundColor = bgcolor;
-    cell.editingAccessoryView.backgroundColor = bgcolor;
-    
-    UIColor *textcolor = [UIColor whiteColor];
-    cell.textLabel.textColor = textcolor;
-    cell.detailTextLabel.textColor = textcolor;
-        
+
+//    cell.selectionStyle = UITableViewCellSeparatorStyleNone;
+//    cell.indentationLevel = 0;
+
+    cell.title.text = district.name;
+    cell.subtitle.text = [NSString stringWithFormat:@"image count: %d", district.images.count];
     return cell;
 }
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     dlog();
+    
+    District *district = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+    if (district.images.count == 0) {
+        return;
+    }
+    
+    dlog(@"setting dvc model");
+    ImageVC *ivc = [[ImageVC alloc] init];
+    ivc.path = [[district.images anyObject] path];
+    
+    [self.navigationController pushViewController:ivc animated:YES];
 }
 
 @end

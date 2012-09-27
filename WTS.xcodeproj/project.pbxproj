@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		FC0396AF160B880D008A3B3C /* DistrictTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0396AE160B880D008A3B3C /* DistrictTVC.m */; };
 		FC726FE0160C8F5400AEC01A /* ImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC726FDF160C8F5400AEC01A /* ImageVC.m */; };
+		FC8FA23E1614B2320068882A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8FA23D1614B2320068882A /* QuartzCore.framework */; };
 		FCA21ED2161353DE00AA2DF6 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA21ED1161353DE00AA2DF6 /* CoreDataTableViewController.m */; };
 		FCA21ED61613712300AA2DF6 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA21ED51613712300AA2DF6 /* Image.m */; };
 		FCA21ED91613712300AA2DF6 /* District.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA21ED81613712300AA2DF6 /* District.m */; };
 		FCA21EDB1613998900AA2DF6 /* 45degreee_fabric.gif in Resources */ = {isa = PBXBuildFile; fileRef = FCA21EDA1613998900AA2DF6 /* 45degreee_fabric.gif */; };
-		FCA21EDE1613A58B00AA2DF6 /* SimpleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA21EDD1613A58A00AA2DF6 /* SimpleTableViewCell.m */; };
+		FCA21EE016144B8700AA2DF6 /* DistrictCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA21EDF16144B8700AA2DF6 /* DistrictCell.xib */; };
+		FCA21EE316144BD500AA2DF6 /* DistrictCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA21EE216144BD500AA2DF6 /* DistrictCell.m */; };
 		FCAF0FEE160B74FF00C7489E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FED160B74FF00C7489E /* UIKit.framework */; };
 		FCAF0FF0160B74FF00C7489E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FEF160B74FF00C7489E /* Foundation.framework */; };
 		FCAF0FF2160B74FF00C7489E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAF0FF1160B74FF00C7489E /* CoreGraphics.framework */; };
@@ -43,6 +45,7 @@
 		FC0396AE160B880D008A3B3C /* DistrictTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictTVC.m; sourceTree = "<group>"; };
 		FC726FDE160C8F5400AEC01A /* ImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageVC.h; sourceTree = "<group>"; };
 		FC726FDF160C8F5400AEC01A /* ImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageVC.m; sourceTree = "<group>"; };
+		FC8FA23D1614B2320068882A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FCA21ED0161353DE00AA2DF6 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		FCA21ED1161353DE00AA2DF6 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		FCA21ED41613712300AA2DF6 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -50,8 +53,9 @@
 		FCA21ED71613712300AA2DF6 /* District.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = District.h; sourceTree = "<group>"; };
 		FCA21ED81613712300AA2DF6 /* District.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = District.m; sourceTree = "<group>"; };
 		FCA21EDA1613998900AA2DF6 /* 45degreee_fabric.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 45degreee_fabric.gif; sourceTree = "<group>"; };
-		FCA21EDC1613A58A00AA2DF6 /* SimpleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableViewCell.h; sourceTree = "<group>"; };
-		FCA21EDD1613A58A00AA2DF6 /* SimpleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableViewCell.m; sourceTree = "<group>"; };
+		FCA21EDF16144B8700AA2DF6 /* DistrictCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DistrictCell.xib; sourceTree = "<group>"; };
+		FCA21EE116144BD500AA2DF6 /* DistrictCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictCell.h; sourceTree = "<group>"; };
+		FCA21EE216144BD500AA2DF6 /* DistrictCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictCell.m; sourceTree = "<group>"; };
 		FCAF0FE9160B74FF00C7489E /* WTS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCAF0FED160B74FF00C7489E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FCAF0FEF160B74FF00C7489E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC8FA23E1614B2320068882A /* QuartzCore.framework in Frameworks */,
 				FCF856D9161220EC0055CE22 /* CoreData.framework in Frameworks */,
 				FCAF0FEE160B74FF00C7489E /* UIKit.framework in Frameworks */,
 				FCAF0FF0160B74FF00C7489E /* Foundation.framework in Frameworks */,
@@ -122,6 +127,7 @@
 		FCAF0FEC160B74FF00C7489E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC8FA23D1614B2320068882A /* QuartzCore.framework */,
 				FCF856D8161220EB0055CE22 /* CoreData.framework */,
 				FCAF0FED160B74FF00C7489E /* UIKit.framework */,
 				FCAF0FEF160B74FF00C7489E /* Foundation.framework */,
@@ -141,18 +147,19 @@
 				FCF856F3161237FB0055CE22 /* MainDao.m */,
 				FC726FDE160C8F5400AEC01A /* ImageVC.h */,
 				FC726FDF160C8F5400AEC01A /* ImageVC.m */,
-				FC0396AD160B880D008A3B3C /* DistrictTVC.h */,
-				FC0396AE160B880D008A3B3C /* DistrictTVC.m */,
 				FCBA9664160CD6CB001400AA /* ImageScrollView.h */,
 				FCBA9665160CD6CB001400AA /* ImageScrollView.m */,
 				FCAF0FFC160B74FF00C7489E /* MainAppDelegate.h */,
 				FCAF0FFD160B74FF00C7489E /* MainAppDelegate.m */,
 				FCAF100B160B74FF00C7489E /* MainViewController.h */,
 				FCAF100C160B74FF00C7489E /* MainViewController.m */,
-				FCA21EDC1613A58A00AA2DF6 /* SimpleTableViewCell.h */,
-				FCA21EDD1613A58A00AA2DF6 /* SimpleTableViewCell.m */,
 				FCA21ED0161353DE00AA2DF6 /* CoreDataTableViewController.h */,
 				FCA21ED1161353DE00AA2DF6 /* CoreDataTableViewController.m */,
+				FC0396AD160B880D008A3B3C /* DistrictTVC.h */,
+				FC0396AE160B880D008A3B3C /* DistrictTVC.m */,
+				FCA21EE116144BD500AA2DF6 /* DistrictCell.h */,
+				FCA21EE216144BD500AA2DF6 /* DistrictCell.m */,
+				FCA21EDF16144B8700AA2DF6 /* DistrictCell.xib */,
 				FCAF1005160B74FF00C7489E /* MainStoryboard_iPhone.storyboard */,
 				FCAF1008160B74FF00C7489E /* MainStoryboard_iPad.storyboard */,
 				FCF856D516121DB80055CE22 /* MainModel.xcdatamodeld */,
@@ -247,6 +254,7 @@
 				FCAF1014160B7A1800C7489E /* Icon-57.png in Resources */,
 				FCAF1016160B7ACD00C7489E /* Icon-114.png in Resources */,
 				FCA21EDB1613998900AA2DF6 /* 45degreee_fabric.gif in Resources */,
+				FCA21EE016144B8700AA2DF6 /* DistrictCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +280,7 @@
 				FCA21ED2161353DE00AA2DF6 /* CoreDataTableViewController.m in Sources */,
 				FCA21ED61613712300AA2DF6 /* Image.m in Sources */,
 				FCA21ED91613712300AA2DF6 /* District.m in Sources */,
-				FCA21EDE1613A58B00AA2DF6 /* SimpleTableViewCell.m in Sources */,
+				FCA21EE316144BD500AA2DF6 /* DistrictCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

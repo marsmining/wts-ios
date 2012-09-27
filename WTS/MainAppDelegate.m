@@ -27,12 +27,12 @@
         // handle the error
     }
     
+    // create root controller and give to our dao
     MainViewController *mvc = (MainViewController *) self.window.rootViewController;
     mvc.mainDao = [MainDao createWithContext:context];
     
-    Sync *syncer = [Sync createWithContext:context];
-    [syncer syncDistricts];
-    [syncer syncImages];
+    // kick off sync
+    [[Sync createWithContext:context] syncAll];
     
     return YES;
 }

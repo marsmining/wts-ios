@@ -20,5 +20,6 @@
 //
 - (void) syncDistricts;
 - (void) syncImages;
+- (void) syncAll;
 
 @end
