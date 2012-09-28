@@ -1,6 +1,5 @@
 //
-//  ImageScrollView.m
-//  WTS
+//  ImageScrollView.m - This code adapted from Apple 'PhotoScroller' sample code.
 //
 //  Created by foo on 9/21/12.
 //  Copyright (c) 2012 Ockham Solutions GmbH. All rights reserved.
@@ -63,7 +62,7 @@
 
 - (void)setFrame:(CGRect)frame
 {
-    dlog();
+    dlog("%f x %f", frame.size.width, frame.size.height);
     
     BOOL sizeChanging = !CGSizeEqualToSize(frame.size, self.frame.size);
     
@@ -136,7 +135,7 @@
         minScale = maxScale;
     }
     
-    self.maximumZoomScale = maxScale;
+    self.maximumZoomScale = maxScale + 2;
     self.minimumZoomScale = minScale;
 }
 

@@ -29,7 +29,6 @@
 		FCAF1002160B74FF00C7489E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCAF1001160B74FF00C7489E /* Default@2x.png */; };
 		FCAF1004160B74FF00C7489E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCAF1003160B74FF00C7489E /* Default-568h@2x.png */; };
 		FCAF1007160B74FF00C7489E /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCAF1005160B74FF00C7489E /* MainStoryboard_iPhone.storyboard */; };
-		FCAF100A160B74FF00C7489E /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCAF1008160B74FF00C7489E /* MainStoryboard_iPad.storyboard */; };
 		FCAF100D160B74FF00C7489E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAF100C160B74FF00C7489E /* MainViewController.m */; };
 		FCBA9666160CD6CB001400AA /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBA9665160CD6CB001400AA /* ImageScrollView.m */; };
 		FCF856591610D1160055CE22 /* Fetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF856581610D1160055CE22 /* Fetcher.m */; };
@@ -75,7 +74,6 @@
 		FCAF1001160B74FF00C7489E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FCAF1003160B74FF00C7489E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FCAF1006160B74FF00C7489E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		FCAF1009160B74FF00C7489E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		FCAF100B160B74FF00C7489E /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		FCAF100C160B74FF00C7489E /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		FCBA9664160CD6CB001400AA /* ImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollView.h; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 				FCA21EE216144BD500AA2DF6 /* DistrictCell.m */,
 				FCA21EDF16144B8700AA2DF6 /* DistrictCell.xib */,
 				FCAF1005160B74FF00C7489E /* MainStoryboard_iPhone.storyboard */,
-				FCAF1008160B74FF00C7489E /* MainStoryboard_iPad.storyboard */,
 				FCF856D516121DB80055CE22 /* MainModel.xcdatamodeld */,
 				FCA21ED41613712300AA2DF6 /* Image.h */,
 				FCA21ED51613712300AA2DF6 /* Image.m */,
@@ -255,7 +252,6 @@
 				FCAF1002160B74FF00C7489E /* Default@2x.png in Resources */,
 				FCAF1004160B74FF00C7489E /* Default-568h@2x.png in Resources */,
 				FCAF1007160B74FF00C7489E /* MainStoryboard_iPhone.storyboard in Resources */,
-				FCAF100A160B74FF00C7489E /* MainStoryboard_iPad.storyboard in Resources */,
 				FCA21EDB1613998900AA2DF6 /* 45degreee_fabric.gif in Resources */,
 				FCA21EE016144B8700AA2DF6 /* DistrictCell.xib in Resources */,
 				FCACE0331614D31F00AA3161 /* Icon-57.png in Resources */,
@@ -307,14 +303,6 @@
 				FCAF1006160B74FF00C7489E /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		FCAF1008160B74FF00C7489E /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FCAF1009160B74FF00C7489E /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -378,6 +366,7 @@
 				GCC_PREFIX_HEADER = "WTS/WTS-Prefix.pch";
 				INFOPLIST_FILE = "WTS/WTS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -389,6 +378,7 @@
 				GCC_PREFIX_HEADER = "WTS/WTS-Prefix.pch";
 				INFOPLIST_FILE = "WTS/WTS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

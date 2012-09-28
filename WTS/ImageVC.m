@@ -50,12 +50,6 @@
     [self addChildViewController:pvc];
     [self.view addSubview:pvc.view];
 
-//    self.scroller = [[ImageScrollView alloc] initWithFrame:self.view.frame];
-//    self.scroller.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//    [self.view addSubview:self.scroller];
-//    
-//    [self.scroller displayImage:myimg];
-//    [self.scroller setNeedsDisplay];
 }
 
 #pragma mark UIPageViewControllerDataSource methods
