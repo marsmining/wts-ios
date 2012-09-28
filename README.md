@@ -9,4 +9,10 @@ controller.
 Info
 ----
 
-* [Sync] WTS/Sync.m
+* on launch, asynchronously fetches json via http and syncs
+  data to core data db
+* for each image in core data db, download thumbnail to the
+  apps cache dir asynchronously, if the file does not exist
+* uses custom table view cell subclass and nib file
+* image viewing code adapted from Apple photo scroller sample
+  app
