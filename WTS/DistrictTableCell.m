@@ -1,14 +1,14 @@
 //
-//  DistrictCell.m
+//  DistrictTableCell.m
 //  WTS
 //
 //  Created by foo on 9/27/12.
 //  Copyright (c) 2012 Ockham Solutions GmbH. All rights reserved.
 //
 
-#import "DistrictCell.h"
+#import "DistrictTableCell.h"
 
-@implementation DistrictCell
+@implementation DistrictTableCell
 
 - (void) awakeFromNib {
     

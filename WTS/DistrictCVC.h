@@ -1,14 +1,14 @@
 //
-//  DistrictTVC.h
+//  DistrictCVC.h
 //  WTS
 //
-//  Created by foo on 9/20/12.
+//  Created by foo on 9/30/12.
 //  Copyright (c) 2012 Ockham Solutions GmbH. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "CoreDataTVC.h"
+#import "CoreDataCVC.h"
 
-@interface DistrictTVC : CoreDataTVC
+@interface DistrictCVC : CoreDataCVC
 
 @end

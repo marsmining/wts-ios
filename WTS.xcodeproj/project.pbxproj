@@ -8,14 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		FC0396AF160B880D008A3B3C /* DistrictTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0396AE160B880D008A3B3C /* DistrictTVC.m */; };
+		FC168D8D161847F9006D02A4 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC168D8C161847F9006D02A4 /* MainStoryboard_iPad.storyboard */; };
+		FC168D9116184C59006D02A4 /* DistrictCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC168D9016184C59006D02A4 /* DistrictCVC.m */; };
+		FC168D9416184DBB006D02A4 /* CoreDataCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC168D9316184DBB006D02A4 /* CoreDataCVC.m */; };
+		FC168D9716185008006D02A4 /* SimpleFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = FC168D9616185008006D02A4 /* SimpleFetch.m */; };
+		FC168D9916188682006D02A4 /* DistrictCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC168D9816188682006D02A4 /* DistrictCollectionCell.xib */; };
+		FC168D9C16188F2F006D02A4 /* DistrictCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC168D9B16188F2F006D02A4 /* DistrictCollectionCell.m */; };
+		FC7259B41616F1B900429466 /* WTSUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7259B31616F1B900429466 /* WTSUtil.m */; };
 		FC726FE0160C8F5400AEC01A /* ImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC726FDF160C8F5400AEC01A /* ImageVC.m */; };
 		FC8FA23E1614B2320068882A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8FA23D1614B2320068882A /* QuartzCore.framework */; };
-		FCA21ED2161353DE00AA2DF6 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA21ED1161353DE00AA2DF6 /* CoreDataTableViewController.m */; };
+		FCA21ED2161353DE00AA2DF6 /* CoreDataTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA21ED1161353DE00AA2DF6 /* CoreDataTVC.m */; };
 		FCA21ED61613712300AA2DF6 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA21ED51613712300AA2DF6 /* Image.m */; };
 		FCA21ED91613712300AA2DF6 /* District.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA21ED81613712300AA2DF6 /* District.m */; };
 		FCA21EDB1613998900AA2DF6 /* 45degreee_fabric.gif in Resources */ = {isa = PBXBuildFile; fileRef = FCA21EDA1613998900AA2DF6 /* 45degreee_fabric.gif */; };
-		FCA21EE016144B8700AA2DF6 /* DistrictCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA21EDF16144B8700AA2DF6 /* DistrictCell.xib */; };
-		FCA21EE316144BD500AA2DF6 /* DistrictCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA21EE216144BD500AA2DF6 /* DistrictCell.m */; };
+		FCA21EE016144B8700AA2DF6 /* DistrictTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA21EDF16144B8700AA2DF6 /* DistrictTableCell.xib */; };
+		FCA21EE316144BD500AA2DF6 /* DistrictTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA21EE216144BD500AA2DF6 /* DistrictTableCell.m */; };
 		FCACE0331614D31F00AA3161 /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = FCACE0311614D31F00AA3161 /* Icon-57.png */; };
 		FCACE0341614D31F00AA3161 /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = FCACE0321614D31F00AA3161 /* Icon-114.png */; };
 		FCACE03B1614EBCF00AA3161 /* ImageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCACE03A1614EBCF00AA3161 /* ImageScrollViewController.m */; };
@@ -43,19 +50,31 @@
 /* Begin PBXFileReference section */
 		FC0396AD160B880D008A3B3C /* DistrictTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictTVC.h; sourceTree = "<group>"; };
 		FC0396AE160B880D008A3B3C /* DistrictTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictTVC.m; sourceTree = "<group>"; };
+		FC168D8C161847F9006D02A4 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		FC168D8F16184C59006D02A4 /* DistrictCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictCVC.h; sourceTree = "<group>"; };
+		FC168D9016184C59006D02A4 /* DistrictCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictCVC.m; sourceTree = "<group>"; };
+		FC168D9216184DBB006D02A4 /* CoreDataCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataCVC.h; sourceTree = "<group>"; };
+		FC168D9316184DBB006D02A4 /* CoreDataCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataCVC.m; sourceTree = "<group>"; };
+		FC168D9516185007006D02A4 /* SimpleFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleFetch.h; sourceTree = "<group>"; };
+		FC168D9616185008006D02A4 /* SimpleFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleFetch.m; sourceTree = "<group>"; };
+		FC168D9816188682006D02A4 /* DistrictCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DistrictCollectionCell.xib; sourceTree = "<group>"; };
+		FC168D9A16188F2F006D02A4 /* DistrictCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictCollectionCell.h; sourceTree = "<group>"; };
+		FC168D9B16188F2F006D02A4 /* DistrictCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictCollectionCell.m; sourceTree = "<group>"; };
+		FC7259B21616F1B900429466 /* WTSUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTSUtil.h; sourceTree = "<group>"; };
+		FC7259B31616F1B900429466 /* WTSUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTSUtil.m; sourceTree = "<group>"; };
 		FC726FDE160C8F5400AEC01A /* ImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageVC.h; sourceTree = "<group>"; };
 		FC726FDF160C8F5400AEC01A /* ImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageVC.m; sourceTree = "<group>"; };
 		FC8FA23D1614B2320068882A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		FCA21ED0161353DE00AA2DF6 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
-		FCA21ED1161353DE00AA2DF6 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		FCA21ED0161353DE00AA2DF6 /* CoreDataTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTVC.h; sourceTree = "<group>"; };
+		FCA21ED1161353DE00AA2DF6 /* CoreDataTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTVC.m; sourceTree = "<group>"; };
 		FCA21ED41613712300AA2DF6 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		FCA21ED51613712300AA2DF6 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		FCA21ED71613712300AA2DF6 /* District.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = District.h; sourceTree = "<group>"; };
 		FCA21ED81613712300AA2DF6 /* District.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = District.m; sourceTree = "<group>"; };
 		FCA21EDA1613998900AA2DF6 /* 45degreee_fabric.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 45degreee_fabric.gif; sourceTree = "<group>"; };
-		FCA21EDF16144B8700AA2DF6 /* DistrictCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DistrictCell.xib; sourceTree = "<group>"; };
-		FCA21EE116144BD500AA2DF6 /* DistrictCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictCell.h; sourceTree = "<group>"; };
-		FCA21EE216144BD500AA2DF6 /* DistrictCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictCell.m; sourceTree = "<group>"; };
+		FCA21EDF16144B8700AA2DF6 /* DistrictTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DistrictTableCell.xib; sourceTree = "<group>"; };
+		FCA21EE116144BD500AA2DF6 /* DistrictTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictTableCell.h; sourceTree = "<group>"; };
+		FCA21EE216144BD500AA2DF6 /* DistrictTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictTableCell.m; sourceTree = "<group>"; };
 		FCACE0311614D31F00AA3161 /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57.png"; sourceTree = "<group>"; };
 		FCACE0321614D31F00AA3161 /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-114.png"; sourceTree = "<group>"; };
 		FCACE0391614EBCF00AA3161 /* ImageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollViewController.h; sourceTree = "<group>"; };
@@ -148,6 +167,8 @@
 				FCF856F3161237FB0055CE22 /* MainDao.m */,
 				FC726FDE160C8F5400AEC01A /* ImageVC.h */,
 				FC726FDF160C8F5400AEC01A /* ImageVC.m */,
+				FC7259B21616F1B900429466 /* WTSUtil.h */,
+				FC7259B31616F1B900429466 /* WTSUtil.m */,
 				FCBA9664160CD6CB001400AA /* ImageScrollView.h */,
 				FCBA9665160CD6CB001400AA /* ImageScrollView.m */,
 				FCACE0391614EBCF00AA3161 /* ImageScrollViewController.h */,
@@ -156,14 +177,24 @@
 				FCAF0FFD160B74FF00C7489E /* MainAppDelegate.m */,
 				FCAF100B160B74FF00C7489E /* MainViewController.h */,
 				FCAF100C160B74FF00C7489E /* MainViewController.m */,
-				FCA21ED0161353DE00AA2DF6 /* CoreDataTableViewController.h */,
-				FCA21ED1161353DE00AA2DF6 /* CoreDataTableViewController.m */,
+				FC168D9516185007006D02A4 /* SimpleFetch.h */,
+				FC168D9616185008006D02A4 /* SimpleFetch.m */,
+				FCA21ED0161353DE00AA2DF6 /* CoreDataTVC.h */,
+				FCA21ED1161353DE00AA2DF6 /* CoreDataTVC.m */,
+				FC168D9216184DBB006D02A4 /* CoreDataCVC.h */,
+				FC168D9316184DBB006D02A4 /* CoreDataCVC.m */,
 				FC0396AD160B880D008A3B3C /* DistrictTVC.h */,
 				FC0396AE160B880D008A3B3C /* DistrictTVC.m */,
-				FCA21EE116144BD500AA2DF6 /* DistrictCell.h */,
-				FCA21EE216144BD500AA2DF6 /* DistrictCell.m */,
-				FCA21EDF16144B8700AA2DF6 /* DistrictCell.xib */,
+				FCA21EE116144BD500AA2DF6 /* DistrictTableCell.h */,
+				FCA21EE216144BD500AA2DF6 /* DistrictTableCell.m */,
+				FCA21EDF16144B8700AA2DF6 /* DistrictTableCell.xib */,
+				FC168D8F16184C59006D02A4 /* DistrictCVC.h */,
+				FC168D9016184C59006D02A4 /* DistrictCVC.m */,
+				FC168D9A16188F2F006D02A4 /* DistrictCollectionCell.h */,
+				FC168D9B16188F2F006D02A4 /* DistrictCollectionCell.m */,
+				FC168D9816188682006D02A4 /* DistrictCollectionCell.xib */,
 				FCAF1005160B74FF00C7489E /* MainStoryboard_iPhone.storyboard */,
+				FC168D8C161847F9006D02A4 /* MainStoryboard_iPad.storyboard */,
 				FCF856D516121DB80055CE22 /* MainModel.xcdatamodeld */,
 				FCA21ED41613712300AA2DF6 /* Image.h */,
 				FCA21ED51613712300AA2DF6 /* Image.m */,
@@ -253,9 +284,11 @@
 				FCAF1004160B74FF00C7489E /* Default-568h@2x.png in Resources */,
 				FCAF1007160B74FF00C7489E /* MainStoryboard_iPhone.storyboard in Resources */,
 				FCA21EDB1613998900AA2DF6 /* 45degreee_fabric.gif in Resources */,
-				FCA21EE016144B8700AA2DF6 /* DistrictCell.xib in Resources */,
+				FCA21EE016144B8700AA2DF6 /* DistrictTableCell.xib in Resources */,
 				FCACE0331614D31F00AA3161 /* Icon-57.png in Resources */,
 				FCACE0341614D31F00AA3161 /* Icon-114.png in Resources */,
+				FC168D8D161847F9006D02A4 /* MainStoryboard_iPad.storyboard in Resources */,
+				FC168D9916188682006D02A4 /* DistrictCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,11 +311,16 @@
 				FCF856F4161237FB0055CE22 /* MainDao.m in Sources */,
 				FCF856F81612FF310055CE22 /* District+CD.m in Sources */,
 				FCF856FB1612FF850055CE22 /* Image+CD.m in Sources */,
-				FCA21ED2161353DE00AA2DF6 /* CoreDataTableViewController.m in Sources */,
+				FCA21ED2161353DE00AA2DF6 /* CoreDataTVC.m in Sources */,
 				FCA21ED61613712300AA2DF6 /* Image.m in Sources */,
 				FCA21ED91613712300AA2DF6 /* District.m in Sources */,
-				FCA21EE316144BD500AA2DF6 /* DistrictCell.m in Sources */,
+				FCA21EE316144BD500AA2DF6 /* DistrictTableCell.m in Sources */,
 				FCACE03B1614EBCF00AA3161 /* ImageScrollViewController.m in Sources */,
+				FC7259B41616F1B900429466 /* WTSUtil.m in Sources */,
+				FC168D9116184C59006D02A4 /* DistrictCVC.m in Sources */,
+				FC168D9416184DBB006D02A4 /* CoreDataCVC.m in Sources */,
+				FC168D9716185008006D02A4 /* SimpleFetch.m in Sources */,
+				FC168D9C16188F2F006D02A4 /* DistrictCollectionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,8 +403,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WTS/WTS-Prefix.pch";
 				INFOPLIST_FILE = "WTS/WTS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -377,8 +416,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WTS/WTS-Prefix.pch";
 				INFOPLIST_FILE = "WTS/WTS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

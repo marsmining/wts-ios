@@ -1,29 +1,27 @@
 //
-//  CoreDataTableViewController.m
+//  SimpleFetch.m
+//  WTS
 //
-//  Created for Stanford CS193p Fall 2011.
-//  Copyright 2011 Stanford University. All rights reserved.
+//  Created by foo on 9/30/12.
+//  Copyright (c) 2012 Ockham Solutions GmbH. All rights reserved.
 //
 
-#import "CoreDataTableViewController.h"
+#import "SimpleFetch.h"
 
-@interface CoreDataTableViewController()
+@interface SimpleFetch ()
 @property (nonatomic) BOOL beganUpdates;
 @end
 
-@implementation CoreDataTableViewController
+@implementation SimpleFetch
+
 
 #pragma mark - Properties
 
 @synthesize fetchedResultsController = _fetchedResultsController;
-@synthesize suspendAutomaticTrackingOfChangesInManagedObjectContext = _suspendAutomaticTrackingOfChangesInManagedObjectContext;
+@synthesize suspend = _suspend;
 @synthesize debug = _debug;
 @synthesize beganUpdates = _beganUpdates;
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
-}
 
 #pragma mark - Fetching
 
@@ -41,7 +39,7 @@
     } else {
         if (self.debug) NSLog(@"[%@ %@] no NSFetchedResultsController (yet?)", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     }
-    [self.tableView reloadData];
+    [self.delegate reloadData];
 }
 
 - (void)setFetchedResultsController:(NSFetchedResultsController *)newfrc
@@ -50,52 +48,24 @@
     if (newfrc != oldfrc) {
         _fetchedResultsController = newfrc;
         newfrc.delegate = self;
-        if ((!self.title || [self.title isEqualToString:oldfrc.fetchRequest.entity.name]) && (!self.navigationController || !self.navigationItem.title)) {
-            self.title = newfrc.fetchRequest.entity.name;
-        }
+
         if (newfrc) {
             if (self.debug) NSLog(@"[%@ %@] %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), oldfrc ? @"updated" : @"set");
-            [self performFetch]; 
+            [self performFetch];
         } else {
             if (self.debug) NSLog(@"[%@ %@] reset to nil", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-            [self.tableView reloadData];
+            [self.delegate reloadData];
         }
     }
 }
 
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return [[self.fetchedResultsController sections] count];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-	return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
-{
-	return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
-}
-
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
-{
-    return [self.fetchedResultsController sectionIndexTitles];
-}
 
 #pragma mark - NSFetchedResultsControllerDelegate
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
-    if (!self.suspendAutomaticTrackingOfChangesInManagedObjectContext) {
-        [self.tableView beginUpdates];
+    if (!self.suspend) {
+        [self.delegate beginUpdates];
         self.beganUpdates = YES;
     }
 }
@@ -105,16 +75,16 @@
 		   atIndex:(NSUInteger)sectionIndex
 	 forChangeType:(NSFetchedResultsChangeType)type
 {
-    if (!self.suspendAutomaticTrackingOfChangesInManagedObjectContext)
+    if (!self.suspend)
     {
         switch(type)
         {
             case NSFetchedResultsChangeInsert:
-                [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+                [self.delegate insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]];
                 break;
                 
             case NSFetchedResultsChangeDelete:
-                [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+                [self.delegate deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]];
                 break;
         }
     }
@@ -126,26 +96,26 @@
 	   atIndexPath:(NSIndexPath *)indexPath
 	 forChangeType:(NSFetchedResultsChangeType)type
 	  newIndexPath:(NSIndexPath *)newIndexPath
-{		
-    if (!self.suspendAutomaticTrackingOfChangesInManagedObjectContext)
+{
+    if (!self.suspend)
     {
         switch(type)
         {
             case NSFetchedResultsChangeInsert:
-                [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+                [self.delegate insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]];
                 break;
                 
             case NSFetchedResultsChangeDelete:
-                [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                [self.delegate deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
                 break;
                 
             case NSFetchedResultsChangeUpdate:
-                [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                [self.delegate reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
                 break;
                 
             case NSFetchedResultsChangeMove:
-                [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-                [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+                [self.delegate deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+                [self.delegate insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]];
                 break;
         }
     }
@@ -153,22 +123,22 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-    if (self.beganUpdates) [self.tableView endUpdates];
+    if (self.beganUpdates) [self.delegate endUpdates];
 }
 
 - (void)endSuspensionOfUpdatesDueToContextChanges
 {
-    _suspendAutomaticTrackingOfChangesInManagedObjectContext = NO;
+    _suspend = NO;
 }
 
-- (void)setSuspendAutomaticTrackingOfChangesInManagedObjectContext:(BOOL)suspend
+- (void)setsuspend:(BOOL)suspend
 {
     if (suspend) {
-        _suspendAutomaticTrackingOfChangesInManagedObjectContext = YES;
+        _suspend = YES;
     } else {
         [self performSelector:@selector(endSuspensionOfUpdatesDueToContextChanges) withObject:0 afterDelay:0];
     }
 }
 
-@end
 
+@end

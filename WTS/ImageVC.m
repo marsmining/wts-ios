@@ -17,10 +17,13 @@
     return myimg;
 }
 
+// navigation controller back button
 - (IBAction)back:(id)sender {
     dlog();
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+#pragma mark UIViewController lifecycle methods
 
 - (void)viewDidLoad
 {
@@ -28,9 +31,39 @@
     dlog();
 }
 
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    dlog(@"---------------------------");
+    
+    dlog("WINDOW: %@", self.view.window);
+    
+    dlog("ROOTVC VIEW: %@", self.view.window.rootViewController.view);
+    for (UIView *v in self.view.window.rootViewController.view.subviews) {
+        dlog("  subviews: %@", v);
+    }
+
+    dlog("NAVIGATIONCONTROLLER VIEW: %@", self.navigationController.view);
+    for (UIView *v in self.navigationController.view.subviews) {
+        dlog("  subviews: %@", v);
+    }
+    
+    dlog("IMAGEVC VIEW: %@", self.view);
+    for (UIView *v in self.view.subviews) {
+        dlog("  subviews: %@", v);
+    }
+    dlog(@"---------------------------");
+}
+
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     dlog("image paths: %@", self.paths);
+    
+    self.title = @"Image Viewer";
+    
+    for (UIView *v in self.navigationController.view.subviews) {
+        dlog("view=%@", v);
+    }
     
     ImageScrollViewController *seed = [ImageScrollViewController createWithImage:[self grab:0] andIndex:0];
     
@@ -49,7 +82,6 @@
     
     [self addChildViewController:pvc];
     [self.view addSubview:pvc.view];
-
 }
 
 #pragma mark UIPageViewControllerDataSource methods

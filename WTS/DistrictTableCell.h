@@ -1,5 +1,5 @@
 //
-//  DistrictCell.h
+//  DistrictTableCell.h
 //  WTS
 //
 //  Created by foo on 9/27/12.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DistrictCell : UITableViewCell
+@interface DistrictTableCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *thumb;
 

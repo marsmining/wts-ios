@@ -10,9 +10,9 @@
 #import "ImageVC.h"
 #import "District+CD.h"
 #import "Image+CD.h"
-#import "DistrictCell.h"
+#import "DistrictTableCell.h"
 
-static NSString *CellIdentifier = @"DistrictCell";
+static NSString *CellIdentifier = @"DistrictTableCell";
 
 @interface DistrictTVC ()
 @property (nonatomic, strong) UINib *nibForCell;
@@ -51,17 +51,17 @@ static NSString *CellIdentifier = @"DistrictCell";
 
 #pragma mark - Table view data source
 
-- (NSString *) trimLeadingBy:(NSUInteger) trimAmt fromString:(NSString *) name {
-    if (name.length > trimAmt)
-        return [name substringFromIndex:trimAmt];
-    else return name;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-	return [self trimLeadingBy: 7 fromString:
-            [[[self.fetchedResultsController sections] objectAtIndex:section] name]];
-}
+//- (NSString *) trimLeadingBy:(NSUInteger) trimAmt fromString:(NSString *) name {
+//    if (name.length > trimAmt)
+//        return [name substringFromIndex:trimAmt];
+//    else return name;
+//}
+//
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//	return [self trimLeadingBy: 7 fromString:
+//            [[[self.fetchedResultsController sections] objectAtIndex:section] name]];
+//}
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     return nil;
@@ -70,14 +70,8 @@ static NSString *CellIdentifier = @"DistrictCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    DistrictCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
+    DistrictTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
                                                          forIndexPath:indexPath];
-    
-    if (!cell) {
-        dlog("error - dequeue should work");
-        cell = [[DistrictCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                   reuseIdentifier:CellIdentifier];
-    }
     
     District *district = [self.fetchedResultsController objectAtIndexPath:indexPath];
 
