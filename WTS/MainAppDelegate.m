@@ -32,7 +32,7 @@
     mvc.mainDao = [MainDao createWithContext:context];
     
     // kick off sync
-    // [[Sync createWithContext:context] syncAll];
+    [[Sync createWithContext:context] syncAll];
     
     return YES;
 }
